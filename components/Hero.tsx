@@ -1,38 +1,43 @@
-
 import React, { useState, useEffect } from 'react';
 
 interface HeroProps {
   onNavigate: () => void;
+  onSlideChange?: (index: number) => void;
 }
 
 const SLIDES = [
   {
-    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=2070&auto=format&fit=crop",
-    alt: "Ancient Himalayan Mountains",
+    image: "https://images.unsplash.com/photo-1454496522488-7a8e488e8606?q=80&w=2070&auto=format&fit=crop",
+    alt: "Pristine Himalayan Peak",
     heading: "NEUROVEDA LABS",
     subheading: ""
   },
   {
-    image: "https://images.unsplash.com/photo-1454496522488-7a8e488e8606?q=80&w=2070&auto=format&fit=crop",
-    alt: "Pristine Himalayan Peak",
+    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=2070&auto=format&fit=crop",
+    alt: "Ancient Himalayan Mountains",
     heading: <>Restore. Recharge. <span className="italic font-light">Rise.</span></>,
     subheading: "Live Energized"
   }
 ];
 
-export const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
+export const Hero: React.FC<HeroProps> = ({ onNavigate, onSlideChange }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev === 0 ? 1 : 0));
-    }, 6000); // Standard 6-second rotation for accessibility and readability
+      const next = currentSlide === 0 ? 1 : 0;
+      setCurrentSlide(next);
+      if (onSlideChange) onSlideChange(next);
+    }, 6000);
 
     return () => clearInterval(timer);
-  }, []);
+  }, [currentSlide, onSlideChange]);
 
-  const nextSlide = () => setCurrentSlide((prev) => (prev === 0 ? 1 : 0));
-  const prevSlide = () => setCurrentSlide((prev) => (prev === 0 ? 1 : 0));
+  const toggleSlide = () => {
+    const next = currentSlide === 0 ? 1 : 0;
+    setCurrentSlide(next);
+    if (onSlideChange) onSlideChange(next);
+  };
 
   const activeSlide = SLIDES[currentSlide];
 
@@ -49,11 +54,6 @@ export const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
             alt={slide.alt} 
             className="w-full h-full object-cover scale-105"
           />
-          {/* 
-            STRICT COMPLIANCE: 
-            Slide 0 (Greenish) uses a lighter parchment-tinted overlay to make requested BLACK text legible.
-            Slide 1 (Snowy) retains the original dark atmospheric gradient as requested to remain 'exactly as-is'.
-          */}
           <div className={`absolute inset-0 transition-all duration-1000 ${index === 0 ? 'bg-parchment/30' : 'bg-gradient-to-b from-black/50 via-transparent to-parchment/20'}`}></div>
           <div className={`absolute inset-0 transition-all duration-1000 ${index === 0 ? 'bg-transparent' : 'bg-black/20'}`}></div>
         </div>
@@ -61,13 +61,13 @@ export const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
       
       {/* Slide Navigation Controls */}
       <button 
-        onClick={prevSlide}
+        onClick={toggleSlide}
         className={`absolute left-6 z-20 w-12 h-12 rounded-full border flex items-center justify-center transition-colors hidden md:flex ${currentSlide === 0 ? 'border-charcoal/20 text-charcoal hover:bg-charcoal/10' : 'border-white/20 text-white hover:bg-white/10'}`}
       >
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M15 18l-6-6 6-6" /></svg>
       </button>
       <button 
-        onClick={nextSlide}
+        onClick={toggleSlide}
         className={`absolute right-6 z-20 w-12 h-12 rounded-full border flex items-center justify-center transition-colors hidden md:flex ${currentSlide === 0 ? 'border-charcoal/20 text-charcoal hover:bg-charcoal/10' : 'border-white/20 text-white hover:bg-white/10'}`}
       >
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M9 18l6-6-6-6" /></svg>
