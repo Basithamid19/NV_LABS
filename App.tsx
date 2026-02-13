@@ -1,7 +1,7 @@
-
 import React, { useState, useEffect, useRef } from 'react';
 import { Hero } from './components/Hero';
 import { MineralFormula } from './components/MineralFormula';
+import { ProductFeatured } from './components/ProductFeatured';
 import { BrandBlock } from './components/BrandBlock';
 import { Benefits } from './components/Benefits';
 import { FAQ } from './components/FAQ';
@@ -54,12 +54,13 @@ const App: React.FC = () => {
           </div>
           <main className="overflow-hidden">
             <div className="scroll-reveal"><MineralFormula /></div>
+            <div className="scroll-reveal"><ProductFeatured onNavigate={() => navigateTo('shop')} /></div>
             <div className="scroll-reveal"><Benefits onNavigate={() => navigateTo('shop')} /></div>
+            {/* BRAND BLOCK REPOSITIONED - NOW DIRECTLY UNDER BENEFITS CARDS */}
+            <div className="scroll-reveal"><BrandBlock onNavigate={() => navigateTo('shop')} /></div>
             <div className="scroll-reveal"><Testimonials /></div>
             <div className="scroll-reveal"><TrustSection /></div>
             <div className="scroll-reveal"><FAQ /></div>
-            {/* BRAND BLOCK MOVED HERE - FINAL CTA ABOVE FOOTER */}
-            <div className="scroll-reveal"><BrandBlock onNavigate={() => navigateTo('shop')} /></div>
           </main>
         </>
       ) : (
