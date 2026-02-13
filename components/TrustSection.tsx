@@ -29,3 +29,4 @@ export const TrustSection: React.FC = () => {
     </section>
   );
 };
+
