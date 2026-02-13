@@ -67,7 +67,7 @@ export const Benefits: React.FC<BenefitsProps> = ({ onNavigate }) => {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   return (
-    <section className="py-20 md:py-32 bg-mutedParchment border-y border-charcoal/5">
+    <section className="pt-20 md:pt-32 pb-12 md:pb-16 bg-mutedParchment border-t border-charcoal/5">
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <div className="max-w-3xl mb-16 md:mb-20">
@@ -126,21 +126,6 @@ export const Benefits: React.FC<BenefitsProps> = ({ onNavigate }) => {
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-
-        {/* Section Footer / CTA */}
-        <div className="mt-16 md:mt-24 flex flex-col items-center text-center space-y-6">
-          <button 
-            onClick={onNavigate}
-            className="bg-charcoal text-white px-12 h-[64px] rounded-full text-xs font-bold uppercase tracking-[0.25em] hover:bg-primary transition-all shadow-xl shadow-charcoal/10 transform hover:scale-[1.02]"
-          >
-            Shop Shilajit
-          </button>
-          <div className="max-w-md">
-            <p className="text-[9px] text-charcoal/40 uppercase tracking-[0.2em] leading-loose italic">
-              * These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.
-            </p>
           </div>
         </div>
       </div>
