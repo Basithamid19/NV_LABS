@@ -5,16 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Neuroveda Labs | Ancient Wellness Refined</title>
 
-    <!-- Google Font -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
-
-    <!-- Tailwind CDN (okay for now, not ideal for production) -->
-    <script src="https://cdn.tailwindcss.com"></script>
 
     <script>
       tailwind.config = {
@@ -46,22 +43,18 @@
         -webkit-font-smoothing: antialiased;
         font-family: "Chakra Petch", sans-serif;
       }
-
       .scroll-reveal {
         opacity: 0;
         transform: translateY(20px);
         transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
       }
-
       .scroll-reveal.visible {
         opacity: 1;
         transform: translateY(0);
       }
-
       .no-scrollbar::-webkit-scrollbar {
         display: none;
       }
-
       .no-scrollbar {
         -ms-overflow-style: none;
         scrollbar-width: none;
@@ -70,9 +63,9 @@
   </head>
 
   <body>
-  <div id="root"></div>
-  <script type="module" src="./index.tsx"></script>
-</body>
+    <div id="root"></div>
 
+    <!-- IMPORTANT: starts your Vite+React app (index.tsx is in root) -->
+    <script type="module" src="./index.tsx"></script>
+  </body>
 </html>
-
