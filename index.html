@@ -1,40 +1,45 @@
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Neuroveda Labs | Ancient Wellness Refined</title>
+
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
     <script>
       tailwind.config = {
         theme: {
           extend: {
             colors: {
-              primary: '#0c6658',
-              parchment: '#FDFBF7',
-              mutedParchment: '#F5F2EC',
-              charcoal: '#1A1A1A',
+              primary: "#0c6658",
+              parchment: "#FDFBF7",
+              mutedParchment: "#F5F2EC",
+              charcoal: "#1A1A1A",
             },
             fontFamily: {
-              serif: ['Chakra Petch', 'sans-serif'],
-              sans: ['Chakra Petch', 'sans-serif'],
+              serif: ["Chakra Petch", "sans-serif"],
+              sans: ["Chakra Petch", "sans-serif"],
             },
             spacing: {
-              'section-sm': '44px',
-              'section-md': '56px',
-            }
-          }
-        }
-      }
+              "section-sm": "44px",
+              "section-md": "56px",
+            },
+          },
+        },
+      };
     </script>
+
     <style>
       body {
-        background-color: #FDFBF7;
-        color: #1A1A1A;
+        background-color: #fdfbf7;
+        color: #1a1a1a;
         -webkit-font-smoothing: antialiased;
       }
       .scroll-reveal {
@@ -54,17 +59,12 @@
         scrollbar-width: none;
       }
     </style>
-<script type="importmap">
-{
-  "imports": {
-    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
-    "react/": "https://esm.sh/react@^19.2.4/",
-    "react": "https://esm.sh/react@^19.2.4"
-  }
-}
-</script>
-</head>
-<body>
+  </head>
+
+  <body>
     <div id="root"></div>
-</body>
+
+    <!-- ✅ REQUIRED: starts your Vite+React app -->
+    <script type="module" src="/index.tsx"></script>
+  </body>
 </html>
