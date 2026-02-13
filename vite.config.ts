@@ -6,9 +6,7 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, '.', '');
 
   return {
-    // ✅ IMPORTANT if your site is hosted on a subpath (like GitHub Pages)
-    // Replace REPO-NAME with your GitHub repo name
-    base: '/REPO-NAME/',
+    base: '/NV_LABS/',
 
     server: {
       port: 3000,
@@ -26,4 +24,5 @@ export default defineConfig(({ mode }) => {
     },
   };
 });
+
 
