@@ -11,7 +11,7 @@ const trustData: TrustItem[] = [
   {
     title: "Sourcing & Extraction",
     body: "Harvested above 17,000 ft in the Himalayas. Ethically sourced, gold-grade shilajit extracted using traditional methods.",
-    bgColor: "#B1B9B2", // Sage Green (from image 1)
+    bgColor: "#B1B9B2", // Sage Green
     icon: (
       <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
         <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
@@ -21,7 +21,7 @@ const trustData: TrustItem[] = [
   {
     title: "Filtration & Purification",
     body: "Traditionally soaked with Triphala, then purified through UV treatment and ion-exchange filtration to remove heavy metals.",
-    bgColor: "#D2D9E2", // Soft Blue Gray (from image 2)
+    bgColor: "#D2D9E2", // Soft Blue Gray
     icon: (
       <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
         <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
@@ -31,7 +31,7 @@ const trustData: TrustItem[] = [
   {
     title: "Third-Party Lab Tested",
     body: "Tested by ISO/IEC 17025 accredited laboratories for safety, purity, and quality verification.",
-    bgColor: "#D4C9BC", // Warm Taupe (from image 3)
+    bgColor: "#D4C9BC", // Warm Taupe
     icon: (
       <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
         <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
@@ -42,7 +42,7 @@ const trustData: TrustItem[] = [
   {
     title: "Potency & Results",
     body: "Mineral-dense and highly bioavailable, crafted for steady energy and clarity. Backed by our 30-day money-back guarantee.",
-    bgColor: "#DCC7C7", // Muted Pink (from image 4)
+    bgColor: "#DCC7C7", // Muted Pink
     icon: (
       <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
         <circle cx="12" cy="12" r="10" />
@@ -100,18 +100,20 @@ export const TrustCards: React.FC = () => {
             <div 
               key={idx} 
               style={{ backgroundColor: item.bgColor }}
-              className="flex-shrink-0 w-[85vw] md:w-[480px] lg:w-[640px] min-h-[380px] md:min-h-[440px] lg:min-h-[480px] snap-center rounded-[32px] lg:rounded-[48px] p-8 lg:p-14 flex flex-col justify-between transition-transform duration-700 hover:scale-[1.01] group"
+              className="flex-shrink-0 w-[85vw] md:w-[480px] lg:w-[640px] min-h-[420px] md:min-h-[440px] lg:min-h-[520px] snap-center rounded-[32px] lg:rounded-[48px] p-8 lg:p-14 flex flex-col justify-start transition-transform duration-700 hover:scale-[1.01] group"
             >
-              <div className="w-14 h-14 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-charcoal mb-8">
+              {/* Icon Container with larger margin to move text up but keep separation */}
+              <div className="w-14 h-14 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-charcoal mb-10 lg:mb-14">
                 {item.icon}
               </div>
               
-              <div className="space-y-4 lg:space-y-6">
+              {/* Content Block shifted higher */}
+              <div className="space-y-4 lg:space-y-8">
                 <h3 className="text-2xl lg:text-4xl font-serif font-bold text-charcoal tracking-tight leading-tight uppercase">
                   {item.title}
                 </h3>
                 <div className="w-12 lg:w-16 h-[1px] bg-charcoal/20 group-hover:w-20 lg:group-hover:w-24 transition-all duration-700" />
-                <p className="text-charcoal/70 text-base lg:text-xl leading-relaxed font-light max-w-xl">
+                <p className="text-charcoal/85 text-xl lg:text-3xl leading-snug font-light max-w-xl">
                   {item.body}
                 </p>
               </div>
