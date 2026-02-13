@@ -13,6 +13,7 @@ import { ProductPage } from './components/ProductPage';
 
 const App: React.FC = () => {
   const [view, setView] = useState<'home' | 'shop'>('home');
+  const [activeHeroSlide, setActiveHeroSlide] = useState(0);
   const heroRef = useRef<HTMLDivElement>(null);
 
   const navigateTo = (newView: 'home' | 'shop') => {
@@ -45,18 +46,24 @@ const App: React.FC = () => {
 
   return (
     <div className="relative font-sans text-charcoal bg-parchment min-h-screen">
-      <Header currentView={view} onNavigate={navigateTo} />
+      <Header 
+        currentView={view} 
+        onNavigate={navigateTo} 
+        heroSlideIndex={activeHeroSlide}
+      />
       
       {view === 'home' ? (
         <>
           <div ref={heroRef}>
-            <Hero onNavigate={() => navigateTo('shop')} />
+            <Hero 
+              onNavigate={() => navigateTo('shop')} 
+              onSlideChange={setActiveHeroSlide}
+            />
           </div>
           <main className="overflow-hidden">
             <div className="scroll-reveal"><MineralFormula /></div>
             <div className="scroll-reveal"><ProductFeatured onNavigate={() => navigateTo('shop')} /></div>
             <div className="scroll-reveal"><Benefits onNavigate={() => navigateTo('shop')} /></div>
-            {/* BRAND BLOCK REPOSITIONED - NOW DIRECTLY UNDER BENEFITS CARDS */}
             <div className="scroll-reveal"><BrandBlock onNavigate={() => navigateTo('shop')} /></div>
             <div className="scroll-reveal"><Testimonials /></div>
             <div className="scroll-reveal"><TrustSection /></div>
