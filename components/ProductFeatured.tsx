@@ -48,7 +48,7 @@ export const ProductFeatured: React.FC<ProductFeaturedProps> = ({ onNavigate }) 
                 The Gold Standard of Resin
               </span>
               <h2 className="text-5xl md:text-7xl font-serif leading-[1.05] tracking-tight">
-                Premium Himalayan <br />
+                Organic <br />
                 <span className="italic font-light">Shilajit Resin</span>
               </h2>
             </div>
