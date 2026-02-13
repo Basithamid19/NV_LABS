@@ -118,3 +118,4 @@ export const ProductFeatured: React.FC<ProductFeaturedProps> = ({ onNavigate }) 
     </section>
   );
 };
+
