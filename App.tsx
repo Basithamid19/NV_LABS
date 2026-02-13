@@ -53,13 +53,13 @@ const App: React.FC = () => {
             <Hero onNavigate={() => navigateTo('shop')} />
           </div>
           <main className="overflow-hidden">
-            {/* BRAND BLOCK MOVED HERE PER REQUEST */}
-            <div className="scroll-reveal"><BrandBlock onNavigate={() => navigateTo('shop')} /></div>
             <div className="scroll-reveal"><MineralFormula /></div>
             <div className="scroll-reveal"><Benefits onNavigate={() => navigateTo('shop')} /></div>
             <div className="scroll-reveal"><Testimonials /></div>
             <div className="scroll-reveal"><TrustSection /></div>
             <div className="scroll-reveal"><FAQ /></div>
+            {/* BRAND BLOCK MOVED HERE - FINAL CTA ABOVE FOOTER */}
+            <div className="scroll-reveal"><BrandBlock onNavigate={() => navigateTo('shop')} /></div>
           </main>
         </>
       ) : (
