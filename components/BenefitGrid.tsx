@@ -76,7 +76,7 @@ export const BenefitGrid: React.FC = () => {
     <section className="relative w-full bg-white overflow-hidden py-16 lg:py-0">
       <div className="flex flex-col lg:flex-row items-center">
         
-        {/* Left: Atmospheric Visual - Updated to high-performance athlete imagery */}
+        {/* Left: Atmospheric Visual */}
         <div className="w-full lg:w-1/2 h-[500px] lg:h-[800px] relative overflow-hidden bg-mutedParchment">
           <img 
             src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?q=80&w=1200&auto=format&fit=crop" 
@@ -91,10 +91,10 @@ export const BenefitGrid: React.FC = () => {
         <div className="w-full lg:w-1/2 px-8 lg:px-24 py-16 lg:py-0 space-y-12">
           <div className="max-w-xl">
             <h2 className="text-4xl lg:text-6xl font-serif leading-[1.1] mb-6 tracking-tight">
-              Unlock systemic <span className="italic font-light">benefits</span>
+              Why 84+ trace <span className="italic font-light">minerals matter.</span>
             </h2>
             <p className="text-charcoal/50 text-base lg:text-lg font-light leading-relaxed">
-              Every drop of Neuroveda resin is concentrated with 84+ essential minerals and fulvic acid to support your optimal human potential.
+              Each drop delivers 84+ trace minerals and fulvic acid to support energy, resilience, and cognitive clarity.
             </p>
           </div>
 
