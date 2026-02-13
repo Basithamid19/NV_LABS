@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Hero } from './components/Hero';
-import MineralFormula from './components/MineralFormula';
+import { MineralFormula } from './components/MineralFormula';
 import { ProductFeatured } from './components/ProductFeatured';
 import { BrandBlock } from './components/BrandBlock';
 import { Benefits } from './components/Benefits';
