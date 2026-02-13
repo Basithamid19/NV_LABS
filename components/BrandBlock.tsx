@@ -36,10 +36,17 @@ export const BrandBlock: React.FC<BrandBlockProps> = ({ onNavigate }) => {
         {/* CTA Button - Matched to Hero Size */}
         <button 
           onClick={onNavigate}
-          className="bg-[#0c6658] text-white px-8 h-[52px] rounded-full text-[10px] font-bold uppercase tracking-[0.25em] hover:bg-[#0a574b] transition-all transform hover:scale-[1.02] shadow-[0_10px_30px_-10px_rgba(12,102,88,0.4)]"
+          className="bg-[#0c6658] text-white px-12 h-[64px] rounded-full text-[11px] font-bold uppercase tracking-[0.25em] hover:bg-[#0a574b] transition-all transform hover:scale-[1.02] shadow-[0_10px_40px_-10px_rgba(12,102,88,0.5)] mb-12"
         >
           SHOP NOW
         </button>
+
+        {/* FDA Disclaimer - Repositioned here for legal compliance and aesthetic flow */}
+        <div className="max-w-md mx-auto">
+          <p className="text-[9px] text-charcoal/30 uppercase tracking-[0.2em] leading-loose italic">
+            * These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.
+          </p>
+        </div>
       </div>
     </section>
   );
