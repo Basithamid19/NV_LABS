@@ -76,11 +76,11 @@ export const BenefitGrid: React.FC = () => {
     <section className="relative w-full bg-white overflow-hidden py-16 lg:py-0">
       <div className="flex flex-col lg:flex-row items-center">
         
-        {/* Left: Atmospheric Visual */}
+        {/* Left: Atmospheric Visual - Updated to high-performance athlete imagery */}
         <div className="w-full lg:w-1/2 h-[500px] lg:h-[800px] relative overflow-hidden bg-mutedParchment">
           <img 
-            src="https://images.unsplash.com/photo-1615485290382-441e4d0c9cb5?q=80&w=1200&auto=format&fit=crop" 
-            alt="Pure resin extraction" 
+            src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?q=80&w=1200&auto=format&fit=crop" 
+            alt="Athlete running on track representing peak performance" 
             className="w-full h-full object-cover mix-blend-multiply opacity-80"
           />
           {/* Subtle overlay for editorial feel */}
