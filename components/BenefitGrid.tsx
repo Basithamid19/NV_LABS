@@ -114,7 +114,7 @@ export const BenefitGrid: React.FC<BenefitGridProps> = ({ onOpenFacts }) => {
             ))}
           </div>
 
-          <div>
+          <div className="pt-10 lg:pt-0">
             <button 
               onClick={onOpenFacts}
               className="h-[52px] px-8 rounded-full bg-charcoal text-white text-[11px] font-bold uppercase tracking-widest hover:bg-primary transition-all shadow-lg shadow-charcoal/10 flex items-center space-x-3"
