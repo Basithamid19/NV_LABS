@@ -10,10 +10,12 @@ import { TrustSection } from './components/TrustSection';
 import { Footer } from './components/Footer';
 import { Header } from './components/Header';
 import { ProductPage } from './components/ProductPage';
+import { SupplementFacts } from './components/SupplementFacts';
 
 const App: React.FC = () => {
   const [view, setView] = useState<'home' | 'shop'>('home');
   const [activeHeroSlide, setActiveHeroSlide] = useState(0);
+  const [isFactsOpen, setIsFactsOpen] = useState(false);
   const heroRef = useRef<HTMLDivElement>(null);
 
   const navigateTo = (newView: 'home' | 'shop') => {
@@ -62,13 +64,14 @@ const App: React.FC = () => {
           </div>
           <main className="overflow-hidden">
             <div className="scroll-reveal"><MineralFormula /></div>
-            <div className="scroll-reveal"><ProductFeatured onNavigate={() => navigateTo('shop')} /></div>
+            <div className="scroll-reveal"><ProductFeatured onNavigate={() => navigateTo('shop')} onOpenFacts={() => setIsFactsOpen(true)} /></div>
             <div className="scroll-reveal"><Benefits onNavigate={() => navigateTo('shop')} /></div>
             <div className="scroll-reveal"><BrandBlock onNavigate={() => navigateTo('shop')} /></div>
             <div className="scroll-reveal"><Testimonials /></div>
             <div className="scroll-reveal"><TrustSection /></div>
             <div className="scroll-reveal"><FAQ /></div>
           </main>
+          <SupplementFacts isOpen={isFactsOpen} onClose={() => setIsFactsOpen(false)} />
         </>
       ) : (
         <ProductPage />
