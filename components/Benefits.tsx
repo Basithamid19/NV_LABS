@@ -134,7 +134,7 @@ export const Benefits: React.FC<BenefitsProps> = ({ onNavigate }) => {
     switch(tier) {
       case 'T1': return 'md:min-w-[800px] md:max-w-[800px]'; // XL
       case 'T2': return 'md:min-w-[580px] md:max-w-[580px]'; // L
-      case 'T3': return 'md:min-w-[340px] md:max-w-[340px]'; // S
+      case 'T3': return 'md:min-w-[500px] md:max-w-[500px]'; // S
       default: return 'md:min-w-[400px]';
     }
   };
