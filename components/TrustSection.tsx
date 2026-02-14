@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 export const TrustSection: React.FC = () => {
@@ -6,7 +5,7 @@ export const TrustSection: React.FC = () => {
     <section className="py-section-sm md:py-section-md bg-mutedParchment border-y border-charcoal/5">
       <div className="container mx-auto px-6 text-center">
         <h2 className="text-3xl md:text-4xl font-serif mb-4">Trusted Quality. Clear Standards.</h2>
-        <p className="text-charcoal/60 mb-12 max-w-xl mx-auto font-light">We believe in radical transparency. No fillers, no shortcuts, just the highest quality Himalayan resin.</p>
+        <p className="text-charcoal/60 mb-12 max-w-2xl mx-auto font-light">No fillers, no shortcuts, just the highest quality Organic Shilajit resin sourced from Himalayan & Karakoram Mountains</p>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-5xl mx-auto">
           <div className="space-y-3">
