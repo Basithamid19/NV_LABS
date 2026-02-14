@@ -100,7 +100,7 @@ export const TrustCards: React.FC = () => {
             <div 
               key={idx} 
               style={{ backgroundColor: item.bgColor }}
-              className="flex-shrink-0 w-[85vw] md:w-[480px] lg:w-[640px] min-h-[420px] md:min-h-[440px] lg:min-h-[520px] snap-center rounded-[32px] lg:rounded-[48px] p-8 lg:p-14 flex flex-col justify-start transition-transform duration-700 hover:scale-[1.01] group"
+              className="flex-shrink-0 w-[85vw] md:w-[480px] lg:w-[640px] min-h-[580px] md:min-h-[440px] lg:min-h-[520px] snap-center rounded-[32px] lg:rounded-[48px] p-8 lg:p-14 flex flex-col justify-start transition-transform duration-700 hover:scale-[1.01] group"
             >
               {/* Icon Container with larger margin to move text up but keep separation */}
               <div className="w-14 h-14 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-charcoal mb-10 lg:mb-14">
