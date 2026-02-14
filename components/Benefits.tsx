@@ -47,7 +47,7 @@ const benefitData: BenefitCard[] = [
     title: "Immune support", 
     description: "Support your body's innate defense systems and resilience.", 
     tag: "Grounded health",
-    bgColor: "#E1DDE5", // Updated to match Apple Lavender Reference
+    bgColor: "#E1DDE5", // Apple Lavender Reference
     textColor: "text-charcoal"
   },
   { 
@@ -71,7 +71,7 @@ const benefitData: BenefitCard[] = [
     title: "Healthy aging", 
     description: "Support cellular health and longevity focus across the years.", 
     tag: "Timeless wellness",
-    bgColor: "#E1DDE5", // Updated to match Apple Lavender Reference
+    bgColor: "#E1DDE5", // Apple Lavender Reference
     textColor: "text-charcoal"
   },
 ];
@@ -142,14 +142,17 @@ export const Benefits: React.FC<BenefitsProps> = ({ onNavigate }) => {
     <section className="pt-16 md:pt-[120px] pb-16 md:pb-[120px] bg-white border-t border-charcoal/5 overflow-hidden">
       <div className="container mx-auto px-6 max-w-7xl">
         
-        {/* Header with Navigation Controls */}
+        {/* Isolated Section Headline at the top */}
+        <div className="mb-10 md:mb-16">
+          <h2 className="text-4xl md:text-8xl font-serif leading-[1.05] tracking-tight text-charcoal">
+            One source. Many systems <span className="italic font-light text-charcoal/80">supported.</span>
+          </h2>
+        </div>
+
+        {/* Row with Description and Navigation Controls */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 md:mb-24 space-y-8 md:space-y-0">
-          <div className="max-w-3xl">
-            <h2 className="text-4xl md:text-7xl font-serif mb-6 leading-[1.05] tracking-tight text-charcoal">
-              One source. <br />
-              Many systems <span className="italic font-light text-charcoal/80">supported.</span>
-            </h2>
-            <p className="text-charcoal/50 text-lg md:text-xl font-light max-w-xl leading-relaxed">
+          <div className="max-w-xl">
+            <p className="text-charcoal/50 text-lg md:text-xl font-light leading-relaxed">
               A concentrated, fulvic-rich mineral complex formulated to support foundational physiological systems.
             </p>
           </div>
