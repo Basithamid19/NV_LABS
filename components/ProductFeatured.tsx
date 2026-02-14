@@ -2,9 +2,10 @@ import React from 'react';
 
 interface ProductFeaturedProps {
   onNavigate: () => void;
+  onOpenFacts?: () => void;
 }
 
-export const ProductFeatured: React.FC<ProductFeaturedProps> = ({ onNavigate }) => {
+export const ProductFeatured: React.FC<ProductFeaturedProps> = ({ onNavigate, onOpenFacts }) => {
   return (
     <section className="bg-white py-16 md:py-32 overflow-hidden border-y border-charcoal/5">
       <div className="container mx-auto px-6">
@@ -43,18 +44,35 @@ export const ProductFeatured: React.FC<ProductFeaturedProps> = ({ onNavigate }) 
           {/* Product Info - Right Column */}
           <div className="w-full lg:w-1/2 space-y-10">
             <div className="space-y-6">
-              <div className="flex flex-col items-start space-y-3">
-                <div className="flex items-center space-x-1.5">
-                  {[...Array(5)].map((_, i) => (
-                    <svg key={i} className="w-5 h-5 text-primary fill-current" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
+              {/* Social Proof Bar (Requested Design) */}
+              <div className="flex items-center space-x-5 mb-6 group/proof cursor-default">
+                {/* Avatar Stack - Now in full color */}
+                <div className="flex -space-x-3">
+                  {[1, 2, 3, 4].map(i => (
+                    <div key={i} className="w-9 h-9 rounded-full border-2 border-white overflow-hidden bg-mutedParchment shadow-sm transition-transform group-hover/proof:scale-110">
+                      <img src={`https://i.pravatar.cc/100?img=${i+15}`} alt="User" className="w-full h-full object-cover" />
+                    </div>
                   ))}
                 </div>
-                <span className="text-[11px] font-bold tracking-[0.12em] uppercase text-charcoal/50">
-                  4.9 (10,000+ HAPPY CUSTOMERS)
-                </span>
+                
+                {/* Vertical Divider */}
+                <div className="h-8 w-[1.5px] bg-charcoal/10"></div>
+                
+                {/* Stars & Customer Count */}
+                <div className="flex flex-col items-start">
+                  <div className="flex text-primary space-x-0.5 mb-0.5">
+                    {[...Array(5)].map((_, i) => (
+                      <svg key={i} className="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      </svg>
+                    ))}
+                  </div>
+                  <span className="text-[10px] font-bold tracking-[0.15em] uppercase text-charcoal/40 leading-none">
+                    4.9 (10,000+ Happy Customers)
+                  </span>
+                </div>
               </div>
+
               <h2 className="text-5xl md:text-7xl font-serif leading-[1.05] tracking-tight">
                 Organic <br />
                 <span className="italic font-light">Shilajit Resin</span>
@@ -101,23 +119,17 @@ export const ProductFeatured: React.FC<ProductFeaturedProps> = ({ onNavigate }) 
               </button>
             </div>
             
-            {/* Social Proof Footer */}
-            <div className="pt-10 border-t border-charcoal/5 flex items-center space-x-6">
-              <div className="flex -space-x-3">
-                {[1, 2, 3, 4].map(i => (
-                  <div key={i} className="w-10 h-10 rounded-full border-2 border-white overflow-hidden bg-mutedParchment shadow-sm">
-                    <img src={`https://i.pravatar.cc/100?img=${i+10}`} alt="User" />
-                  </div>
-                ))}
-              </div>
-              <div>
-                <div className="flex text-primary space-x-0.5 mb-0.5">
-                  {[...Array(5)].map((_, i) => (
-                    <svg key={i} className="w-3 h-3 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
-                  ))}
-                </div>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-charcoal/50">2,482 verified happy customers</p>
-              </div>
+            {/* Supplement Facts Trigger Button (Requested Replace) */}
+            <div className="pt-10 border-t border-charcoal/5">
+              <button 
+                onClick={onOpenFacts}
+                className="h-[52px] px-8 rounded-full bg-charcoal text-white text-[11px] font-bold uppercase tracking-widest hover:bg-primary transition-all shadow-lg shadow-charcoal/10 flex items-center space-x-3"
+              >
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                </svg>
+                <span>View Supplement Facts</span>
+              </button>
             </div>
           </div>
 
