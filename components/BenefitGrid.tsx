@@ -1,5 +1,8 @@
-
 import React from 'react';
+
+interface BenefitGridProps {
+  onOpenFacts?: () => void;
+}
 
 const benefits = [
   {
@@ -71,7 +74,7 @@ const benefits = [
   }
 ];
 
-export const BenefitGrid: React.FC = () => {
+export const BenefitGrid: React.FC<BenefitGridProps> = ({ onOpenFacts }) => {
   return (
     <section className="relative w-full bg-white overflow-hidden py-16 lg:py-0">
       <div className="flex flex-col lg:flex-row items-center">
@@ -112,8 +115,14 @@ export const BenefitGrid: React.FC = () => {
           </div>
 
           <div className="pt-4">
-            <button className="h-[52px] px-8 rounded-full bg-charcoal text-white text-[11px] font-bold uppercase tracking-widest hover:bg-primary transition-all shadow-lg shadow-charcoal/10">
-              See all health benefits
+            <button 
+              onClick={onOpenFacts}
+              className="h-[52px] px-8 rounded-full bg-charcoal text-white text-[11px] font-bold uppercase tracking-widest hover:bg-primary transition-all shadow-lg shadow-charcoal/10 flex items-center space-x-3"
+            >
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+              </svg>
+              <span>View Supplement Facts</span>
             </button>
           </div>
         </div>
