@@ -2,42 +2,44 @@ import React, { useState } from 'react';
 import { TrustCards } from './TrustCards';
 import { ProductReviews } from './ProductReviews';
 import { BenefitGrid } from './BenefitGrid';
+import { SupplementFacts } from './SupplementFacts';
 
 export const ProductPage: React.FC = () => {
   const [purchaseType, setPurchaseType] = useState<'one-time' | 'subscribe'>('subscribe');
   const [bundle, setBundle] = useState<1 | 3 | 6>(3);
+  const [isFactsModalOpen, setIsFactsModalOpen] = useState(false);
 
-  // Bundle data updated to 40 servings per jar for exact math alignment
+  // Bundle data updated to 120 servings per jar for exact math alignment
   const bundles = [
     {
       id: 1,
       name: "Buy 1",
-      servings: 40,
+      servings: 120,
       subscriptionPrice: 65.45,
       oneTimePrice: 77.00,
       msrp: 77.00,
       badge: null,
-      context: "~40 servings per jar"
+      context: "~120 servings per jar"
     },
     {
       id: 3,
       name: "Buy 3",
-      servings: 120, // 40 * 3
+      servings: 360, // 120 * 3
       subscriptionPrice: 167.00, 
       oneTimePrice: 197.00,
       msrp: 231.00, // $77 * 3
       badge: "MOST POPULAR",
-      context: "~120 servings total"
+      context: "~360 servings total"
     },
     {
       id: 6,
       name: "Buy 6",
-      servings: 240, // 40 * 6
+      servings: 720, // 120 * 6
       subscriptionPrice: 295.00, 
       oneTimePrice: 347.00,
       msrp: 462.00, // $77 * 6
       badge: "Best value",
-      context: "~240 servings total"
+      context: "~720 servings total"
     }
   ];
 
@@ -247,7 +249,7 @@ export const ProductPage: React.FC = () => {
         </div>
 
         <div className="relative -mx-6 lg:mx-0 mt-20">
-          <BenefitGrid />
+          <BenefitGrid onOpenFacts={() => setIsFactsModalOpen(true)} />
         </div>
 
         <div className="mt-20 border-t border-charcoal/5 space-y-12">
@@ -255,6 +257,9 @@ export const ProductPage: React.FC = () => {
           <ProductReviews />
         </div>
       </div>
+
+      {/* Facts Modal */}
+      <SupplementFacts isOpen={isFactsModalOpen} onClose={() => setIsFactsModalOpen(false)} />
     </div>
   );
 };
