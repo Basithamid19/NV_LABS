@@ -15,7 +15,7 @@ const benefitData: BenefitCard[] = [
     title: "Recovery support", 
     description: "Aid natural rejuvenation and structural balance after daily exertion.", 
     tag: "Ionic recovery",
-    bgColor: "#DCE2DD", // Lighter Sage
+    bgColor: "#C0C9C0", // Apple Sage Reference
     textColor: "text-charcoal"
   },
   { 
@@ -31,7 +31,7 @@ const benefitData: BenefitCard[] = [
     title: "Cognitive clarity", 
     description: "Support mental sharpness, focus, and long-term cognitive endurance.", 
     tag: "Nootropic support",
-    bgColor: "#EAE4DD", // Lighter Taupe
+    bgColor: "#D7CEC1", // Apple Beige Reference
     textColor: "text-charcoal"
   },
   { 
@@ -39,7 +39,7 @@ const benefitData: BenefitCard[] = [
     title: "Stress & mood", 
     description: "Support a grounded, balanced response to environmental stressors.", 
     tag: "Inner calm",
-    bgColor: "#E8DFE1", // Lighter Rose
+    bgColor: "#E5D2D2", // Updated to match Apple Rose Reference
     textColor: "text-charcoal"
   },
   { 
@@ -63,7 +63,7 @@ const benefitData: BenefitCard[] = [
     title: "Gut support", 
     description: "Support healthy nutrient absorption and microbial harmony.", 
     tag: "Bioavailable intake",
-    bgColor: "#DCE2DD", // Lighter Sage
+    bgColor: "#C0C9C0", // Apple Sage Reference
     textColor: "text-charcoal"
   },
   { 
