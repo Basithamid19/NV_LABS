@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 interface ProductFeaturedProps {
@@ -55,15 +54,15 @@ export const ProductFeatured: React.FC<ProductFeaturedProps> = ({ onNavigate }) 
 
             <div className="space-y-6">
               <p className="text-charcoal/60 text-lg md:text-xl font-light leading-relaxed max-w-lg">
-                Directly sourced from the Karakoram range, our resin is sun-dried and water-purified to preserve the world's most dense concentration of trace minerals.
+                One science-backed source for whole-body balance.
               </p>
               
               <ul className="space-y-4">
                 {[
-                  "84+ Essential Trace Minerals",
-                  "High Fulvic & Humic Acid Profile",
-                  "Wild-Harvested at 16,000 ft",
-                  "Verified Third-Party Lab Results"
+                  "85+ Bioavailable Trace Minerals",
+                  "Ethically Wild-Harvested Above 18,000 ft",
+                  "ISO-Accredited, Heavy-Metal Tested & Lab Verified",
+                  "30-Day Money-Back Guarantee"
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-center text-sm font-bold uppercase tracking-[0.15em] text-charcoal/80">
                     <span className="w-6 h-6 rounded-full bg-primary/5 flex items-center justify-center mr-4">
@@ -88,7 +87,7 @@ export const ProductFeatured: React.FC<ProductFeaturedProps> = ({ onNavigate }) 
                 onClick={onNavigate}
                 className="bg-primary text-white h-[72px] px-12 rounded-2xl text-[11px] font-bold uppercase tracking-[0.3em] hover:bg-primary/90 transition-all shadow-2xl shadow-primary/20 flex items-center group"
               >
-                <span>Shop Premium Resin</span>
+                <span>Shop Organic Shilajit</span>
                 <svg className="w-4 h-4 ml-4 transition-transform group-hover:translate-x-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
               </button>
             </div>
