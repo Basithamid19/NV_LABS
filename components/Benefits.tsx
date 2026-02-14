@@ -15,7 +15,7 @@ const benefitData: BenefitCard[] = [
     title: "Recovery support", 
     description: "Aid natural rejuvenation and structural balance after daily exertion.", 
     tag: "Ionic recovery",
-    bgColor: "#A8B3A9", 
+    bgColor: "#DCE2DD", // Lighter Sage
     textColor: "text-charcoal"
   },
   { 
@@ -23,7 +23,7 @@ const benefitData: BenefitCard[] = [
     title: "Energy & stamina", 
     description: "Support sustained vitality and endurance without the synthetic crash.", 
     tag: "Cellular fuel",
-    bgColor: "#B8C2CC", 
+    bgColor: "#E1E6EB", // Lighter Slate
     textColor: "text-charcoal"
   },
   { 
@@ -31,7 +31,7 @@ const benefitData: BenefitCard[] = [
     title: "Cognitive clarity", 
     description: "Support mental sharpness, focus, and long-term cognitive endurance.", 
     tag: "Nootropic support",
-    bgColor: "#C9BDB0", 
+    bgColor: "#EAE4DD", // Lighter Taupe
     textColor: "text-charcoal"
   },
   { 
@@ -39,7 +39,7 @@ const benefitData: BenefitCard[] = [
     title: "Stress & mood", 
     description: "Support a grounded, balanced response to environmental stressors.", 
     tag: "Inner calm",
-    bgColor: "#C7B2B7", 
+    bgColor: "#E8DFE1", // Lighter Rose
     textColor: "text-charcoal"
   },
   { 
@@ -47,7 +47,7 @@ const benefitData: BenefitCard[] = [
     title: "Immune support", 
     description: "Support your body's innate defense systems and resilience.", 
     tag: "Grounded health",
-    bgColor: "#C5C1D0", 
+    bgColor: "#E5E3EA", // Lighter Lavender
     textColor: "text-charcoal"
   },
   { 
@@ -55,15 +55,15 @@ const benefitData: BenefitCard[] = [
     title: "Mineral replenishment", 
     description: "84+ trace minerals in their most bioavailable, earth-grown form.", 
     tag: "Full-spectrum",
-    bgColor: "#6E6F7B", 
-    textColor: "text-white"
+    bgColor: "#DDE0E3", // Lighter Steel Blue
+    textColor: "text-charcoal"
   },
   { 
     category: "07", 
     title: "Gut support", 
     description: "Support healthy nutrient absorption and microbial harmony.", 
     tag: "Bioavailable intake",
-    bgColor: "#A8B3A9", 
+    bgColor: "#DCE2DD", // Lighter Sage
     textColor: "text-charcoal"
   },
   { 
@@ -71,7 +71,7 @@ const benefitData: BenefitCard[] = [
     title: "Healthy aging", 
     description: "Support cellular health and longevity focus across the years.", 
     tag: "Timeless wellness",
-    bgColor: "#B8C2CC", 
+    bgColor: "#E1E6EB", // Lighter Slate
     textColor: "text-charcoal"
   },
 ];
@@ -139,7 +139,7 @@ export const Benefits: React.FC<BenefitsProps> = ({ onNavigate }) => {
   };
 
   return (
-    <section className="pt-16 md:pt-[120px] pb-16 md:pb-[120px] bg-mutedParchment border-t border-charcoal/5 overflow-hidden">
+    <section className="pt-16 md:pt-[120px] pb-16 md:pb-[120px] bg-white border-t border-charcoal/5 overflow-hidden">
       <div className="container mx-auto px-6 max-w-7xl">
         
         {/* Header with Navigation Controls */}
