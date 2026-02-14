@@ -39,7 +39,7 @@ const benefitData: BenefitCard[] = [
     title: "Stress & mood", 
     description: "Support a grounded, balanced response to environmental stressors.", 
     tag: "Inner calm",
-    bgColor: "#E5D2D2", // Updated to match Apple Rose Reference
+    bgColor: "#E5D2D2", // Apple Rose Reference
     textColor: "text-charcoal"
   },
   { 
@@ -47,7 +47,7 @@ const benefitData: BenefitCard[] = [
     title: "Immune support", 
     description: "Support your body's innate defense systems and resilience.", 
     tag: "Grounded health",
-    bgColor: "#E5E3EA", // Lighter Lavender
+    bgColor: "#E1DDE5", // Updated to match Apple Lavender Reference
     textColor: "text-charcoal"
   },
   { 
@@ -71,7 +71,7 @@ const benefitData: BenefitCard[] = [
     title: "Healthy aging", 
     description: "Support cellular health and longevity focus across the years.", 
     tag: "Timeless wellness",
-    bgColor: "#E1E6EB", // Lighter Slate
+    bgColor: "#E1DDE5", // Updated to match Apple Lavender Reference
     textColor: "text-charcoal"
   },
 ];
