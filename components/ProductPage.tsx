@@ -9,37 +9,34 @@ export const ProductPage: React.FC = () => {
   const [bundle, setBundle] = useState<1 | 3 | 6>(3);
   const [isFactsModalOpen, setIsFactsModalOpen] = useState(false);
 
-  // Bundle data updated to 120 servings per jar for exact math alignment
+  // Bundle data
   const bundles = [
     {
       id: 1,
       name: "Buy 1",
-      servings: 120,
+      servings: 40,
       subscriptionPrice: 65.45,
       oneTimePrice: 77.00,
       msrp: 77.00,
       badge: null,
-      context: "~120 servings per jar"
     },
     {
       id: 3,
       name: "Buy 3",
-      servings: 360, // 120 * 3
+      servings: 120, // 40 * 3
       subscriptionPrice: 167.00, 
       oneTimePrice: 197.00,
       msrp: 231.00, // $77 * 3
       badge: "MOST POPULAR",
-      context: "~360 servings total"
     },
     {
       id: 6,
       name: "Buy 6",
-      servings: 720, // 120 * 6
+      servings: 240, // 40 * 6
       subscriptionPrice: 295.00, 
       oneTimePrice: 347.00,
       msrp: 462.00, // $77 * 6
       badge: "Best value",
-      context: "~720 servings total"
     }
   ];
 
@@ -130,15 +127,9 @@ export const ProductPage: React.FC = () => {
                         </div>
                         <div className="space-y-1">
                           <h4 className="font-bold text-xl">{b.name}</h4>
-                          <div className="flex flex-wrap gap-x-2 gap-y-1 items-center">
-                            <p className="text-xs text-charcoal/40 font-medium">
-                              {b.context}
-                            </p>
-                            <span className="w-1 h-1 rounded-full bg-charcoal/10 hidden md:inline-block"></span>
-                            <p className="text-xs text-primary font-bold tracking-tight">
-                              Just ${pricePerDay} per day
-                            </p>
-                          </div>
+                          <p className="text-xs text-primary font-bold tracking-tight">
+                            Just ${pricePerDay} per day
+                          </p>
                         </div>
                       </div>
 
@@ -230,8 +221,8 @@ export const ProductPage: React.FC = () => {
 
             {/* Primary CTA */}
             <div className="space-y-4 pt-2">
-               <button className="w-full bg-primary text-white h-[68px] rounded-2xl text-sm md:text-base font-bold uppercase tracking-[0.15em] md:tracking-[0.2em] hover:brightness-110 transition-all shadow-xl shadow-primary/10 flex items-center justify-center space-x-4 px-4">
-                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+               <button className="w-full bg-gradient-to-r from-primary via-[#0d7a6a] to-primary text-white h-[74px] rounded-2xl text-[15px] md:text-lg font-bold uppercase tracking-[0.15em] md:tracking-[0.2em] hover:brightness-110 transition-all transform hover:scale-[1.02] shadow-[0_20px_50px_-15px_rgba(12,102,88,0.5)] flex items-center justify-center space-x-4 px-6 border border-white/10 group">
+                  <svg className="w-5 h-5 transition-transform group-hover:scale-110" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
                   <span>Secure Checkout – ${currentTotalPrice}</span>
                </button>
                <div className="flex justify-center space-x-6 text-[9px] text-charcoal/20 font-bold uppercase tracking-widest">
