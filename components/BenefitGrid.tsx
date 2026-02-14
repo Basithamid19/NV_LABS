@@ -91,7 +91,7 @@ export const BenefitGrid: React.FC<BenefitGridProps> = ({ onOpenFacts }) => {
         </div>
 
         {/* Right: Content Grid */}
-        <div className="w-full lg:w-1/2 px-8 lg:px-24 py-16 lg:py-0 space-y-12">
+        <div className="w-full lg:w-1/2 px-8 lg:px-24 py-16 lg:py-0 space-y-10">
           <div className="max-w-xl">
             <h2 className="text-4xl lg:text-6xl font-serif leading-[1.1] mb-6 tracking-tight">
               Why 84+ trace <span className="italic font-light">minerals matter.</span>
@@ -114,7 +114,7 @@ export const BenefitGrid: React.FC<BenefitGridProps> = ({ onOpenFacts }) => {
             ))}
           </div>
 
-          <div className="pt-4">
+          <div>
             <button 
               onClick={onOpenFacts}
               className="h-[52px] px-8 rounded-full bg-charcoal text-white text-[11px] font-bold uppercase tracking-widest hover:bg-primary transition-all shadow-lg shadow-charcoal/10 flex items-center space-x-3"
