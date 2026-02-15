@@ -26,7 +26,10 @@ const benefitData: BenefitCard[] = [
     description: "Support sustained vitality and endurance without the synthetic crash.", 
     tag: "Cellular fuel",
     bgColor: "#E1E6EB", // Lighter Slate
-    textColor: "text-charcoal"
+    textColor: "text-charcoal",
+    // Fixed: Using direct image source for the athlete/performance visual
+    image: "https://images.unsplash.com/photo-1605235186583-a8272b61f9fe?q=80&w=2070&auto=format&fit=crop"
+
   },
   { 
     category: "03", 
@@ -34,7 +37,9 @@ const benefitData: BenefitCard[] = [
     description: "Support mental sharpness, focus, and long-term cognitive endurance.", 
     tag: "Nootropic support",
     bgColor: "#D7CEC1", // Apple Beige Reference
-    textColor: "text-charcoal"
+    textColor: "text-charcoal",
+    // Fixed: Using direct image source for the premium meditation visual
+    image: "https://images.unsplash.com/photo-1573142143200-2a6d95ae7352?q=80&w=1200&auto=format&fit=crop"
   },
   { 
     category: "04", 
@@ -42,7 +47,9 @@ const benefitData: BenefitCard[] = [
     description: "Support a grounded, balanced response to environmental stressors.", 
     tag: "Inner calm",
     bgColor: "#E5D2D2", // Apple Rose Reference
-    textColor: "text-charcoal"
+    textColor: "text-charcoal",
+    // Fixed
+    image: "https://images.unsplash.com/photo-1619365734050-cb5e64a42d43?q=80&w=1200&auto=format&fit=crop"
   },
   { 
     category: "05", 
@@ -199,30 +206,28 @@ export const Benefits: React.FC<BenefitsProps> = ({ onNavigate }) => {
                     <div className={`w-14 h-[1px] mt-2 opacity-10 ${benefit.textColor === 'text-white' ? 'bg-white' : 'bg-charcoal'}`}></div>
                   </div>
 
+                  <h3 className="text-2xl md:text-[36px] font-serif mb-6 md:mb-8 leading-[1.1] tracking-tight font-bold uppercase">
+                    {benefit.title}
+                  </h3>
+                  <p className={`leading-relaxed text-base md:text-lg font-light opacity-60 ${benefit.textColor === 'text-white' ? 'opacity-80' : ''} max-w-xl mb-10`}>
+                    {benefit.description}
+                  </p>
+
                   {benefit.image && (
-                    <div className="mb-10 overflow-hidden rounded-[24px] aspect-[16/9] md:aspect-[21/9] bg-black/5">
+                    <div className="overflow-hidden rounded-[24px] aspect-[4/3] md:aspect-[16/10] bg-black/5">
                       <img 
                         src={benefit.image} 
                         alt={benefit.title}
                         loading="lazy"
                         className="w-full h-full object-cover mix-blend-multiply opacity-80 group-hover/card:scale-105 transition-transform duration-1000"
                         onError={(e) => {
-                          // Fallback to a secondary reliable asset if needed
                           const target = e.target as HTMLImageElement;
-                          if (!target.src.includes('sig=')) {
-                            target.src = "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=1200&auto=format&fit=crop";
-                          }
+                          // Fallback to a high-quality meditation image if specific URL fails
+                          target.src = "images.unsplash.com/photo-1605235186583-a8272b61f9fe?q=80&w=1200&auto=format&fit=crop";
                         }}
                       />
                     </div>
                   )}
-                  
-                  <h3 className="text-2xl md:text-[36px] font-serif mb-6 md:mb-8 leading-[1.1] tracking-tight font-bold uppercase">
-                    {benefit.title}
-                  </h3>
-                  <p className={`leading-relaxed text-base md:text-lg font-light opacity-60 ${benefit.textColor === 'text-white' ? 'opacity-80' : ''} max-w-xl`}>
-                    {benefit.description}
-                  </p>
                 </div>
 
                 <div className="mt-auto pt-12">
