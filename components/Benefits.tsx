@@ -27,9 +27,7 @@ const benefitData: BenefitCard[] = [
     tag: "Cellular fuel",
     bgColor: "#E1E6EB", // Lighter Slate
     textColor: "text-charcoal",
-    // Fixed: Using direct image source for the athlete/performance visual
     image: "https://images.unsplash.com/photo-1605235186583-a8272b61f9fe?q=80&w=2070&auto=format&fit=crop"
-
   },
   { 
     category: "03", 
@@ -38,7 +36,6 @@ const benefitData: BenefitCard[] = [
     tag: "Nootropic support",
     bgColor: "#D7CEC1", // Apple Beige Reference
     textColor: "text-charcoal",
-    // Fixed: Using direct image source for the premium meditation visual
     image: "https://images.unsplash.com/photo-1573142143200-2a6d95ae7352?q=80&w=1200&auto=format&fit=crop"
   },
   { 
@@ -48,40 +45,43 @@ const benefitData: BenefitCard[] = [
     tag: "Inner calm",
     bgColor: "#E5D2D2", // Apple Rose Reference
     textColor: "text-charcoal",
-    // Fixed
     image: "https://images.unsplash.com/photo-1619365734050-cb5e64a42d43?q=80&w=1200&auto=format&fit=crop"
   },
   { 
     category: "05", 
-    title: "Immune support", 
-    description: "Support your body's innate defense systems and resilience.", 
-    tag: "Grounded health",
-    bgColor: "#E1DDE5", // Apple Lavender Reference
-    textColor: "text-charcoal"
+    title: "Testosterone support", 
+    description: "Support healthy hormonal balance, strength, and drive through foundational mineral nourishment.",
+    tag: "Hormonal balance",
+    bgColor: "#E1DDE5",
+    textColor: "text-charcoal",
+    image: "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?q=80&w=1200&auto=format&fit=crop", 
   },
   { 
     category: "06", 
     title: "Mineral replenishment", 
     description: "84+ trace minerals in their most bioavailable, earth-grown form.", 
     tag: "Full-spectrum",
-    bgColor: "#DDE0E3", // Lighter Steel Blue
-    textColor: "text-charcoal"
+    bgColor: "#DDE0E3", 
+    textColor: "text-charcoal",
+    image: "https://images.unsplash.com/photo-1768154916321-f8c94b176b3f?q=80&w=1200&auto=format&fit=crop"
   },
   { 
     category: "07", 
-    title: "Gut support", 
-    description: "Support healthy nutrient absorption and microbial harmony.", 
-    tag: "Bioavailable intake",
-    bgColor: "#C0C9C0", // Apple Sage Reference
-    textColor: "text-charcoal"
+    title: "Cellular vitality", 
+    description: "Support mitochondrial energy production and cellular resilience at the foundational level.", 
+    tag: "Mitochondrial support",
+    bgColor: "#C0C9C0",
+    textColor: "text-charcoal",
+    image: "https://images.unsplash.com/photo-1706639449756-9ffea3f420a7?q=80&w=1200&auto=format&fit=crop"
   },
   { 
     category: "08", 
     title: "Healthy aging", 
     description: "Support cellular health and longevity focus across the years.", 
     tag: "Timeless wellness",
-    bgColor: "#E1DDE5", // Apple Lavender Reference
-    textColor: "text-charcoal"
+    bgColor: "#E1DDE5", 
+    textColor: "text-charcoal",
+    image: "https://images.unsplash.com/photo-1575572779113-49527c36dd19?q=80&w=1200&auto=format&fit=crop"
   },
 ];
 
@@ -222,8 +222,7 @@ export const Benefits: React.FC<BenefitsProps> = ({ onNavigate }) => {
                         className="w-full h-full object-cover mix-blend-multiply opacity-80 group-hover/card:scale-105 transition-transform duration-1000"
                         onError={(e) => {
                           const target = e.target as HTMLImageElement;
-                          // Fallback to a high-quality meditation image if specific URL fails
-                          target.src = "images.unsplash.com/photo-1605235186583-a8272b61f9fe?q=80&w=1200&auto=format&fit=crop";
+                          target.src = "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=1200&auto=format&fit=crop";
                         }}
                       />
                     </div>
