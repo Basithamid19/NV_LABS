@@ -8,6 +8,7 @@ interface BenefitCard {
   bgColor: string;
   textColor: string;
   image?: string;
+  imagePosition?: string; // ✅ optional per-card focal point (desktop-only classes)
 }
 
 const benefitData: BenefitCard[] = [
@@ -46,6 +47,8 @@ const benefitData: BenefitCard[] = [
     bgColor: "#E5D2D2",
     textColor: "text-charcoal",
     image: "https://images.unsplash.com/photo-1619365734050-cb5e64a42d43?q=80&w=1200&auto=format&fit=crop",
+    // ✅ desktop-only focal point so her face stays in frame
+    imagePosition: "md:object-[50%_25%]",
   },
   {
     category: "05",
@@ -186,6 +189,11 @@ export const Benefits: React.FC<BenefitsProps> = ({ onNavigate: _onNavigate }) =
                 (benefit.textColor === 'text-white' ? 'opacity-80 ' : '') +
                 "md:h-[28px] md:overflow-hidden md:whitespace-nowrap md:text-ellipsis";
 
+              const imgClass =
+                "w-full h-full object-cover object-center " +
+                (benefit.imagePosition ?? "") +
+                " mix-blend-multiply opacity-80 group-hover/card:scale-105 transition-transform duration-1000";
+
               return (
                 <div
                   key={idx}
@@ -193,7 +201,7 @@ export const Benefits: React.FC<BenefitsProps> = ({ onNavigate: _onNavigate }) =
                   className={
                     "flex-shrink-0 snap-start border border-charcoal/5 flex flex-col justify-between " +
                     "rounded-[32px] md:rounded-[40px] p-8 md:p-14 transition-all duration-500 group/card " +
-                    // ✅ Uniform size on desktop
+                    // ✅ Uniform card size (desktop)
                     "w-[88vw] md:w-[600px] " +
                     "min-h-[460px] md:h-[640px] " +
                     benefit.textColor +
@@ -223,13 +231,13 @@ export const Benefits: React.FC<BenefitsProps> = ({ onNavigate: _onNavigate }) =
                     <p className={descClass}>{benefit.description}</p>
 
                     {benefit.image && (
-                      // ✅ Uniform photo size on desktop
+                      // ✅ Uniform photo size (desktop)
                       <div className="overflow-hidden rounded-[24px] aspect-[4/3] md:aspect-auto md:h-[260px] bg-black/5">
                         <img
                           src={benefit.image}
                           alt={benefit.title}
                           loading="lazy"
-                          className="w-full h-full object-cover mix-blend-multiply opacity-80 group-hover/card:scale-105 transition-transform duration-1000"
+                          className={imgClass}
                           onError={(e) => {
                             const target = e.target as HTMLImageElement;
                             target.src =
@@ -271,3 +279,4 @@ export const Benefits: React.FC<BenefitsProps> = ({ onNavigate: _onNavigate }) =
     </section>
   );
 };
+
