@@ -307,3 +307,4 @@ export const Benefits: React.FC<BenefitsProps> = ({ onNavigate: _onNavigate }) =
     </section>
   );
 };
+
