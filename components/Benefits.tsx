@@ -8,83 +8,101 @@ interface BenefitCard {
   bgColor: string;
   textColor: string;
   image?: string;
-  imagePosition?: string; // ✅ optional per-card focal point (desktop-only classes)
+  imagePosition?: string; // ✅ optional per-card focal point (mobile+desktop classes if you want)
 }
 
 const benefitData: BenefitCard[] = [
   {
     category: "01",
-    title: "Recovery support",
-    description: "Aid natural rejuvenation and structural balance after daily exertion.",
-    tag: "Ionic recovery",
+    title: "Recovery",
+    description:
+      "Recover smarter. Supports muscle repair and structural balance so you’re ready for your next session.",
+    tag: "Rise stronger each time.",
     bgColor: "#C0C9C0",
     textColor: "text-charcoal",
-    image: "https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?q=80&w=1200&auto=format&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1605614307370-f7a1e58ae751?q=80&w=1170&auto=format&fit=crop",
+    imagePosition: "md:object-[50%_8%]",
   },
   {
     category: "02",
-    title: "Energy & stamina",
-    description: "Support sustained vitality and endurance without the synthetic crash.",
-    tag: "Cellular fuel",
+    title: "Clean, Sustained Energy",
+    description:
+      "Steady output without the spike and crash. Supports natural energy production for long, focused days.",
+    tag: "Power without the crash.",
     bgColor: "#E1E6EB",
     textColor: "text-charcoal",
-    image: "https://images.unsplash.com/photo-1605235186583-a8272b61f9fe?q=80&w=2070&auto=format&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1605235186583-a8272b61f9fe?q=80&w=2070&auto=format&fit=crop",
+    imagePosition: "md:object-[50%_85%]",
   },
   {
     category: "03",
-    title: "Cognitive clarity",
-    description: "Support mental sharpness, focus, and long-term cognitive endurance.",
-    tag: "Nootropic support",
+    title: "Flow-State Focus",
+    description:
+      "Supports mental sharpness and sustained focus for deep work and creative intensity.",
+    tag: "Where clarity becomes momentum.",
     bgColor: "#D7CEC1",
     textColor: "text-charcoal",
-    image: "https://images.unsplash.com/photo-1573142143200-2a6d95ae7352?q=80&w=1200&auto=format&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1573142143200-2a6d95ae7352?q=80&w=1200&auto=format&fit=crop",
+    imagePosition: "md:object-[50%_95%]",
   },
   {
     category: "04",
-    title: "Stress & mood",
-    description: "Support a grounded, balanced response to environmental stressors.",
-    tag: "Inner calm",
+    title: "Adaptive Resilience",
+    description:
+      "Naturally supports balancing your cortisol response to help you stay grounded, calm, and composed.",
+    tag: "Keep your cool in the chaos.",
     bgColor: "#E5D2D2",
     textColor: "text-charcoal",
-    image: "https://images.unsplash.com/photo-1619365734050-cb5e64a42d43?q=80&w=1200&auto=format&fit=crop",
-    // ✅ desktop-only focal point so her face stays in frame
-    imagePosition: "md:object-[50%_25%]",
+    image:
+      "https://images.unsplash.com/photo-1619365734050-cb5e64a42d43?q=80&w=1200&auto=format&fit=crop",
+    imagePosition: "object-[50%_20%] md:object-[50%_25%]",
   },
   {
     category: "05",
-    title: "Testosterone support",
-    description: "Support healthy hormonal balance, strength, and drive through foundational mineral nourishment.",
-    tag: "Hormonal balance",
+    title: "Male Vitality Support",
+    description:
+      "Supports healthy hormonal balance, strength, and drive for active men.",
+    tag: "Strength, refined from within.",
     bgColor: "#E1DDE5",
     textColor: "text-charcoal",
-    image: "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?q=80&w=1200&auto=format&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?q=80&w=1200&auto=format&fit=crop",
   },
   {
     category: "06",
-    title: "Mineral balance",
-    description: "84+ trace minerals in their most bioavailable, earth-grown form.",
-    tag: "Full-spectrum",
+    title: "84+ Trace Minerals",
+    description:
+      "Full-spectrum, earth-derived minerals in highly bioavailable form to support foundational health.",
+    tag: "From the earth, to your core.",
     bgColor: "#DDE0E3",
     textColor: "text-charcoal",
-    image: "https://images.unsplash.com/photo-1768154916321-f8c94b176b3f?q=80&w=1200&auto=format&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1768154916321-f8c94b176b3f?q=80&w=1200&auto=format&fit=crop",
   },
   {
     category: "07",
-    title: "Cellular vitality",
-    description: "Support mitochondrial energy production and cellular resilience at the foundational level.",
-    tag: "Mitochondrial support",
+    title: "Cellular Energy Support",
+    description:
+      "Supports mitochondrial function—the foundation of energy, resilience, and long-term vitality.",
+    tag: "Ignite your cellular engines.",
     bgColor: "#C0C9C0",
     textColor: "text-charcoal",
-    image: "https://images.unsplash.com/photo-1706639449756-9ffea3f420a7?q=80&w=1200&auto=format&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1706639449756-9ffea3f420a7?q=80&w=1200&auto=format&fit=crop",
   },
   {
     category: "08",
-    title: "Healthy aging",
-    description: "Support cellular health and longevity focus across the years.",
-    tag: "Timeless wellness",
+    title: "Healthy Aging Support",
+    description:
+      "Supports cognitive function and cellular protection as your body evolves over time.",
+    tag: "Youth isn’t a timeframe; it’s a state of being.",
     bgColor: "#E1DDE5",
     textColor: "text-charcoal",
-    image: "https://images.unsplash.com/photo-1575572779113-49527c36dd19?q=80&w=1200&auto=format&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1575572779113-49527c36dd19?q=80&w=1200&auto=format&fit=crop",
   },
 ];
 
@@ -141,7 +159,8 @@ export const Benefits: React.FC<BenefitsProps> = ({ onNavigate: _onNavigate }) =
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="mb-10 md:mb-16">
           <h2 className="text-4xl md:text-8xl font-serif leading-[1.05] tracking-tight text-charcoal">
-            One source. Many systems <span className="italic font-light text-charcoal/80">supported.</span>
+            One source. Many systems{' '}
+            <span className="italic font-light text-charcoal/80">supported.</span>
           </h2>
         </div>
 
@@ -175,22 +194,19 @@ export const Benefits: React.FC<BenefitsProps> = ({ onNavigate: _onNavigate }) =
         </div>
 
         <div className="relative">
-          <div
-            ref={scrollRef}
-            className="flex gap-4 md:gap-10 overflow-x-auto no-scrollbar snap-x snap-mandatory pb-12"
-          >
+          <div ref={scrollRef} className="flex gap-4 md:gap-10 overflow-x-auto no-scrollbar snap-x snap-mandatory pb-12">
             {benefitData.map((benefit, idx) => {
               const titleClass =
-                "text-2xl md:text-[36px] font-serif mb-6 md:mb-8 leading-[1.1] tracking-tight font-bold uppercase " +
+                "text-2xl md:text-[36px] font-serif leading-[1.1] tracking-tight font-bold uppercase " +
                 "md:h-[44px] md:whitespace-nowrap md:overflow-hidden md:text-ellipsis";
 
               const descClass =
-                "leading-relaxed text-base md:text-lg font-light opacity-60 max-w-xl mb-10 " +
+                "leading-relaxed text-base md:text-lg font-light opacity-60 max-w-xl mt-4 md:mt-5 " +
                 (benefit.textColor === 'text-white' ? 'opacity-80 ' : '') +
-                "md:h-[28px] md:overflow-hidden md:whitespace-nowrap md:text-ellipsis";
+                "md:min-h-[56px] md:whitespace-normal md:overflow-visible";
 
               const imgClass =
-                "w-full h-full object-cover object-center " +
+                "w-full h-full object-cover object-[50%_22%] md:object-[50%_18%] " +
                 (benefit.imagePosition ?? "") +
                 " mix-blend-multiply opacity-80 group-hover/card:scale-105 transition-transform duration-1000";
 
@@ -199,17 +215,17 @@ export const Benefits: React.FC<BenefitsProps> = ({ onNavigate: _onNavigate }) =
                   key={idx}
                   style={{ backgroundColor: benefit.bgColor }}
                   className={
-                    "flex-shrink-0 snap-start border border-charcoal/5 flex flex-col justify-between " +
+                    "relative flex-shrink-0 snap-start border border-charcoal/5 flex flex-col overflow-hidden " +
                     "rounded-[32px] md:rounded-[40px] p-8 md:p-14 transition-all duration-500 group/card " +
-                    // ✅ Uniform card size (desktop)
                     "w-[88vw] md:w-[600px] " +
                     "min-h-[460px] md:h-[640px] " +
                     benefit.textColor +
                     " md:hover:-translate-y-2 md:hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.12)]"
                   }
                 >
-                  <div>
-                    <div className="flex justify-between items-start mb-8 md:mb-12">
+                  {/* ✅ Category row now includes the TAG on desktop only */}
+                  <div className="flex justify-between items-start mb-6 md:mb-8">
+                    <div className="flex items-start gap-4">
                       <span
                         className={
                           "text-[12px] font-bold tracking-[0.3em] opacity-20 " +
@@ -218,37 +234,49 @@ export const Benefits: React.FC<BenefitsProps> = ({ onNavigate: _onNavigate }) =
                       >
                         {benefit.category}
                       </span>
-                      <div
+
+                      {/* ✅ Tag beside category (desktop only) */}
+                      <span
                         className={
-                          "w-14 h-[1px] mt-2 opacity-10 " +
-                          (benefit.textColor === 'text-white' ? 'bg-white' : 'bg-charcoal')
+                          "hidden md:inline-block text-[10px] font-black uppercase tracking-[0.35em] " +
+                          (benefit.textColor === 'text-white' ? 'text-white/70' : 'text-charcoal/50')
                         }
-                      />
+                      >
+                        {benefit.tag}
+                      </span>
                     </div>
 
-                    <h3 className={titleClass}>{benefit.title}</h3>
-
-                    <p className={descClass}>{benefit.description}</p>
-
-                    {benefit.image && (
-                      // ✅ Uniform photo size (desktop)
-                      <div className="overflow-hidden rounded-[24px] aspect-[4/3] md:aspect-auto md:h-[260px] bg-black/5">
-                        <img
-                          src={benefit.image}
-                          alt={benefit.title}
-                          loading="lazy"
-                          className={imgClass}
-                          onError={(e) => {
-                            const target = e.target as HTMLImageElement;
-                            target.src =
-                              "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=1200&auto=format&fit=crop";
-                          }}
-                        />
-                      </div>
-                    )}
+                    <div
+                      className={
+                        "w-14 h-[1px] mt-2 opacity-10 " +
+                        (benefit.textColor === 'text-white' ? 'bg-white' : 'bg-charcoal')
+                      }
+                    />
                   </div>
 
-                  <div className="mt-auto pt-12">
+                  {/* Title + Description */}
+                  <h3 className={titleClass}>{benefit.title}</h3>
+                  <p className={descClass}>{benefit.description}</p>
+
+                  {/* Image */}
+                  {benefit.image && (
+                    <div className="mt-6 md:mt-8 overflow-hidden rounded-[24px] bg-black/5 flex-1 min-h-[220px] md:min-h-[360px]">
+                      <img
+                        src={benefit.image}
+                        alt={benefit.title}
+                        loading="lazy"
+                        className={imgClass}
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement;
+                          target.src =
+                            "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=1200&auto=format&fit=crop";
+                        }}
+                      />
+                    </div>
+                  )}
+
+                  {/* ✅ Mobile tag stays at bottom like before */}
+                  <div className="mt-auto pt-8 md:hidden">
                     <span
                       className={
                         "text-[10px] font-black uppercase tracking-[0.35em] " +
@@ -279,4 +307,3 @@ export const Benefits: React.FC<BenefitsProps> = ({ onNavigate: _onNavigate }) =
     </section>
   );
 };
-
