@@ -196,9 +196,10 @@ export const Benefits: React.FC<BenefitsProps> = ({ onNavigate: _onNavigate }) =
         <div className="relative">
           <div ref={scrollRef} className="flex gap-4 md:gap-10 overflow-x-auto no-scrollbar snap-x snap-mandatory pb-12">
             {benefitData.map((benefit, idx) => {
+              // ✅ FIX: remove desktop nowrap + overflow clipping + forced height
               const titleClass =
                 "text-2xl md:text-[36px] font-serif leading-[1.1] tracking-tight font-bold uppercase " +
-                "md:h-[44px] md:whitespace-nowrap md:overflow-hidden md:text-ellipsis";
+                "whitespace-normal break-words";
 
               const descClass =
                 "leading-relaxed text-base md:text-lg font-light opacity-60 max-w-xl mt-4 md:mt-5 " +
@@ -307,4 +308,3 @@ export const Benefits: React.FC<BenefitsProps> = ({ onNavigate: _onNavigate }) =
     </section>
   );
 };
-
