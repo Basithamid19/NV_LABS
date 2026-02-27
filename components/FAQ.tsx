@@ -7,10 +7,38 @@ interface FAQItem {
 }
 
 const faqs: FAQItem[] = [
-  { question: "How do I take the shilajit resin?", answer: "Dissolve a pea-sized amount (approx. 250mg) in warm water, tea, or milk once or twice daily on an empty stomach." },
-  { question: "Where is your shilajit sourced?", answer: "We exclusively source our resin from high-altitude regions of the Himalayas, ensuring purity and concentration." },
-  { question: "Is it third-party tested?", answer: "Yes, every batch undergoes rigorous third-party testing for heavy metals and purity. Lab results are available upon request." },
-  { question: "How long before I see results?", answer: "While individual experiences vary, most customers report feeling increased energy and clarity within 7 to 10 days of consistent use." }
+  { 
+    question: "What is Shilajit?", 
+    answer: "Shilajit is a potent, mineral-rich resin formed over centuries from the decomposition of plant matter in high-altitude mountain ranges. It is a foundational substance in traditional wellness, prized for its high concentration of fulvic acid and 84+ trace minerals." 
+  },
+  { 
+    question: "What are the benefits of Shilajit?", 
+    answer: "Shilajit supports a wide range of physiological systems, including natural energy production, cognitive focus, and physical recovery. It is highly effective for high performers, athletes, entrepreneurs, and those focused on longevity and natural mineral support." 
+  },
+  { 
+    question: "Who is Shilajit best suited for?", 
+    answer: "It is ideal for active individuals, mental performance seekers, and anyone focused on vitality. Note: It is not recommended for pregnant or breastfeeding women without consulting a healthcare professional." 
+  },
+  { 
+    question: "How do I take Shilajit resin?", 
+    answer: "Dissolve a pea-sized amount (300–500mg) in warm water, tea, or milk. For optimal absorption, we recommend taking it in the morning on an empty stomach. It can be taken daily as part of your wellness routine." 
+  },
+  { 
+    question: "How long before I notice results?", 
+    answer: "While some feel an increase in energy and focus within a few days, deeper physiological benefits typically take 2–4 weeks of consistent use. Consistency is key to unlocking the full potential of this mineral complex." 
+  },
+  { 
+    question: "Is your Shilajit third-party lab tested?", 
+    answer: "Yes. Every batch is rigorously third-party tested for purity, heavy metals, and microbial contamination. We verify fulvic acid percentages to ensure potency, and COAs are available upon request for complete transparency." 
+  },
+  { 
+    question: "Where is your Shilajit sourced?", 
+    answer: "Our Shilajit is wild-harvested from the highest altitudes of the Himalayan and Karakoram mountain ranges, where the environment is pristine and untouched by modern pollutants." 
+  },
+  { 
+    question: "Does it contain additives or fillers?", 
+    answer: "No. Neuroveda Labs Shilajit is 100% natural, pure resin. We never use fillers, shortcuts, or synthetic additives—just the raw, concentrated power of the earth." 
+  }
 ];
 
 export const FAQ: React.FC = () => {
@@ -20,8 +48,7 @@ export const FAQ: React.FC = () => {
     <section className="py-section-sm md:py-section-md bg-parchment">
       <div className="container mx-auto px-6 max-w-3xl">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-5xl font-serif mb-4">Getting started</h2>
-          <p className="text-charcoal/40 uppercase tracking-[0.2em] text-[10px] font-bold">Frequently Asked Questions</p>
+          <h2 className="text-2xl md:text-4xl font-serif text-charcoal tracking-tight whitespace-nowrap">Frequently Asked Questions</h2>
         </div>
         <div className="space-y-2">
           {faqs.map((faq, idx) => (
@@ -38,7 +65,7 @@ export const FAQ: React.FC = () => {
                 </span>
               </button>
               <div 
-                className={`overflow-hidden transition-all duration-500 ease-in-out ${openIndex === idx ? 'max-h-[200px] opacity-100' : 'max-h-0 opacity-0'}`}
+                className={`overflow-hidden transition-all duration-500 ease-in-out ${openIndex === idx ? 'max-h-[400px] opacity-100' : 'max-h-0 opacity-0'}`}
               >
                 <div className="px-6 pb-6 text-charcoal/70 leading-relaxed font-light text-base border-t border-charcoal/5 pt-4">
                   {faq.answer}
@@ -51,3 +78,4 @@ export const FAQ: React.FC = () => {
     </section>
   );
 };
+
