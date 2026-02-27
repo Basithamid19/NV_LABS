@@ -16,20 +16,20 @@ export const TrustSection: React.FC = () => {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-5xl mx-auto">
-          <div className="space-y-3 text-center md:text-left">
+          <div className="space-y-3 text-center">
             <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-primary">Sourcing</h4>
             <h3 className="text-xl font-serif italic">High-Altitude Extraction</h3>
-            <p className="text-sm text-charcoal/60 leading-relaxed px-4 md:px-0">Wild-harvested from above 18,000 ft in the Himalayan mountains where the air is pure and the soil is untouched.</p>
+            <p className="text-sm text-charcoal/60 leading-relaxed px-4">Wild-harvested from above 18,000 ft in the Himalayan mountains where the air is pure and the soil is untouched.</p>
           </div>
-          <div className="space-y-3 text-center md:text-left">
+          <div className="space-y-3 text-center">
             <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-primary">Purity</h4>
             <h3 className="text-xl font-serif italic">4-Step Purification</h3>
-            <p className="text-sm text-charcoal/60 leading-relaxed px-4 md:px-0">Traditionally soaked with Triphala, then purified through UV treatment and ion-exchange filtration to remove heavy metals.</p>
+            <p className="text-sm text-charcoal/60 leading-relaxed px-4">Traditionally soaked with Triphala, then purified through UV treatment and ion-exchange filtration to remove heavy metals.</p>
           </div>
-          <div className="space-y-3 text-center md:text-left">
+          <div className="space-y-3 text-center">
             <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-primary">Testing</h4>
             <h3 className="text-xl font-serif italic">Batch Transparency</h3>
-            <p className="text-sm text-charcoal/60 leading-relaxed px-4 md:px-0">Every single gram is tested in ISO-certified labs for purity, potency, and safety. View the labs on every product page.</p>
+            <p className="text-sm text-charcoal/60 leading-relaxed px-4">Every single gram is tested in ISO-certified labs for purity, potency, and safety. View the labs on every product page.</p>
           </div>
         </div>
       </div>
