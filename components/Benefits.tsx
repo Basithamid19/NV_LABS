@@ -165,8 +165,8 @@ export const Benefits: React.FC<BenefitsProps> = ({ onNavigate: _onNavigate }) =
         </div>
 
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 md:mb-24 space-y-8 md:space-y-0">
-          <div className="max-w-4xl">
-            <p className="text-charcoal/50 text-lg md:text-xl font-light leading-relaxed">
+          <div className="flex-1">
+            <p className="text-charcoal/80 text-lg md:text-xl font-light leading-relaxed md:whitespace-nowrap">
               A concentrated, fulvic-rich mineral complex formulated to support foundational physiological systems.
             </p>
           </div>
@@ -306,4 +306,3 @@ export const Benefits: React.FC<BenefitsProps> = ({ onNavigate: _onNavigate }) =
     </section>
   );
 };
-
