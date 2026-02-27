@@ -6,7 +6,7 @@ import { SupplementFacts } from './SupplementFacts';
 
 export const ProductPage: React.FC = () => {
   const [purchaseType, setPurchaseType] = useState<'one-time' | 'subscribe'>('subscribe');
-  const [bundle, setBundle] = useState<1 | 3 | 6>(3);
+  const [bundle, setBundle] = useState<1 | 2 | 3>(2);
   const [isFactsModalOpen, setIsFactsModalOpen] = useState(false);
 
   // Bundle data
@@ -21,21 +21,21 @@ export const ProductPage: React.FC = () => {
       badge: null,
     },
     {
-      id: 3,
-      name: "Buy 3",
-      servings: 120, // 40 * 3
-      subscriptionPrice: 167.00, 
-      oneTimePrice: 197.00,
-      msrp: 231.00, // $77 * 3
+      id: 2,
+      name: "Buy 2",
+      servings: 80, // 40 * 2
+      subscriptionPrice: 118.15, 
+      oneTimePrice: 139.00,
+      msrp: 154.00, // $77 * 2
       badge: "MOST POPULAR",
     },
     {
-      id: 6,
-      name: "Buy 6",
-      servings: 240, // 40 * 6
-      subscriptionPrice: 295.00, 
-      oneTimePrice: 347.00,
-      msrp: 462.00, // $77 * 6
+      id: 3,
+      name: "Buy 3",
+      servings: 120, // 40 * 3
+      subscriptionPrice: 160.65, 
+      oneTimePrice: 189.00,
+      msrp: 231.00, // $77 * 3
       badge: "Best value",
     }
   ];
@@ -112,7 +112,7 @@ export const ProductPage: React.FC = () => {
                   return (
                     <div 
                       key={b.id}
-                      onClick={() => setBundle(b.id as 1|3|6)}
+                      onClick={() => setBundle(b.id as 1|2|3)}
                       className={`relative p-5 md:p-6 rounded-2xl border-2 transition-all cursor-pointer flex items-center justify-between ${bundle === b.id ? 'border-primary bg-primary/[0.04]' : 'border-charcoal/5 bg-white hover:border-charcoal/10'}`}
                     >
                       {b.badge && (
