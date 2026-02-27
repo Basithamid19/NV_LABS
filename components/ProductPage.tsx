@@ -9,6 +9,18 @@ export const ProductPage: React.FC = () => {
   const [bundle, setBundle] = useState<1 | 2 | 3>(2);
   const [isFactsModalOpen, setIsFactsModalOpen] = useState(false);
 
+  // ✅ Product gallery images (GitHub Pages path)
+  // Confirmed working pattern: https://basithamid19.github.io/NV_LABS/images/P1.png
+  const productImages = [
+    "/NV_LABS/images/P1.png",
+    "/NV_LABS/images/P2.png",
+    "/NV_LABS/images/P3.png",
+    "/NV_LABS/images/P4.png",
+    "/NV_LABS/images/P5.png",
+  ];
+
+  const [activeImage, setActiveImage] = useState(productImages[0]);
+
   // Bundle data
   const bundles = [
     {
@@ -24,7 +36,7 @@ export const ProductPage: React.FC = () => {
       id: 2,
       name: "Buy 2",
       servings: 80, // 40 * 2
-      subscriptionPrice: 118.15, 
+      subscriptionPrice: 118.15,
       oneTimePrice: 139.00,
       msrp: 154.00, // $77 * 2
       badge: "MOST POPULAR",
@@ -33,7 +45,7 @@ export const ProductPage: React.FC = () => {
       id: 3,
       name: "Buy 3",
       servings: 120, // 40 * 3
-      subscriptionPrice: 160.65, 
+      subscriptionPrice: 160.65,
       oneTimePrice: 189.00,
       msrp: 231.00, // $77 * 3
       badge: "Best value",
@@ -41,8 +53,8 @@ export const ProductPage: React.FC = () => {
   ];
 
   const selectedBundleData = bundles.find(b => b.id === bundle)!;
-  
-  const getCurrentPrice = (b: typeof bundles[0]) => 
+
+  const getCurrentPrice = (b: typeof bundles[0]) =>
     purchaseType === 'subscribe' ? b.subscriptionPrice : b.oneTimePrice;
 
   const currentTotalPrice = getCurrentPrice(selectedBundleData).toFixed(2);
@@ -53,30 +65,45 @@ export const ProductPage: React.FC = () => {
     <div className="pt-24 md:pt-32 pb-20 bg-parchment">
       <div className="container mx-auto px-6">
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 mb-20">
-          
+
           {/* Media Gallery */}
           <div className="lg:w-1/2 lg:sticky lg:top-32 h-fit">
             <div className="space-y-4">
               <div className="aspect-square rounded-[32px] overflow-hidden bg-mutedParchment border border-charcoal/5 relative">
-                <img 
-                  src="https://images.unsplash.com/photo-1556228720-195a672e8a03?q=80&w=2000&auto=format&fit=crop" 
-                  alt="Pure Himalayan Shilajit Resin" 
-                  className="w-full h-full object-cover mix-blend-multiply opacity-90"
+                <img
+                  src={activeImage}
+                  alt="Neuroveda Shilajit Resin"
+                  className="w-full h-full object-cover"
                 />
                 <div className="absolute top-6 left-6 bg-white/90 backdrop-blur-md px-4 py-1.5 rounded-full text-[9px] font-bold uppercase tracking-[0.2em] shadow-sm">
-                  16,000ft Altitude
+                  Premium Resin
                 </div>
               </div>
-              <div className="grid grid-cols-4 gap-3">
-                {[1, 2, 3, 4].map((i) => (
-                  <div key={i} className="aspect-square rounded-xl overflow-hidden bg-mutedParchment border border-charcoal/5 cursor-pointer hover:border-primary transition-all">
-                    <img 
-                      src={`https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=400&auto=format&fit=crop&sig=${i}`} 
-                      className="w-full h-full object-cover opacity-60"
-                      alt={`Gallery thumbnail ${i}`}
-                    />
-                  </div>
-                ))}
+
+              <div className="grid grid-cols-5 gap-3">
+                {productImages.map((src, i) => {
+                  const isActive = src === activeImage;
+
+                  return (
+                    <button
+                      key={src}
+                      type="button"
+                      onClick={() => setActiveImage(src)}
+                      className={`aspect-square rounded-xl overflow-hidden bg-mutedParchment border cursor-pointer transition-all ${
+                        isActive ? "border-primary" : "border-charcoal/5 hover:border-primary/50"
+                      }`}
+                      aria-label={`View product image ${i + 1}`}
+                    >
+                      <img
+                        src={src}
+                        className={`w-full h-full object-cover transition-opacity ${
+                          isActive ? "opacity-100" : "opacity-60 hover:opacity-80"
+                        }`}
+                        alt={`Product photo ${i + 1}`}
+                      />
+                    </button>
+                  );
+                })}
               </div>
             </div>
           </div>
@@ -110,7 +137,7 @@ export const ProductPage: React.FC = () => {
                   const pricePerDay = (currentPrice / b.servings).toFixed(2);
 
                   return (
-                    <div 
+                    <div
                       key={b.id}
                       onClick={() => setBundle(b.id as 1|2|3)}
                       className={`relative p-5 md:p-6 rounded-2xl border-2 transition-all cursor-pointer flex items-center justify-between ${bundle === b.id ? 'border-primary bg-primary/[0.04]' : 'border-charcoal/5 bg-white hover:border-charcoal/10'}`}
@@ -157,7 +184,7 @@ export const ProductPage: React.FC = () => {
               </div>
 
               <div className="space-y-2">
-                <div 
+                <div
                   onClick={() => setPurchaseType('subscribe')}
                   className={`p-5 rounded-2xl border-2 transition-all cursor-pointer flex items-center justify-between ${purchaseType === 'subscribe' ? 'border-primary bg-primary/[0.02]' : 'border-charcoal/5 bg-white'}`}
                 >
@@ -178,7 +205,7 @@ export const ProductPage: React.FC = () => {
                   </div>
                 </div>
 
-                <div 
+                <div
                   onClick={() => setPurchaseType('one-time')}
                   className={`p-5 rounded-2xl border-2 transition-all cursor-pointer flex items-center justify-between ${purchaseType === 'one-time' ? 'border-primary bg-primary/[0.02]' : 'border-charcoal/5 bg-white'}`}
                 >
@@ -221,20 +248,20 @@ export const ProductPage: React.FC = () => {
 
             {/* Primary CTA */}
             <div className="space-y-4 pt-2">
-               <button className="w-full bg-gradient-to-r from-primary via-[#0d7a6a] to-primary text-white h-[74px] rounded-2xl text-[15px] md:text-lg font-bold uppercase tracking-[0.15em] md:tracking-[0.2em] hover:brightness-110 transition-all transform hover:scale-[1.02] shadow-[0_20px_50px_-15px_rgba(12,102,88,0.5)] flex items-center justify-center space-x-4 px-6 border border-white/10 group">
-                  <svg className="w-5 h-5 transition-transform group-hover:scale-110" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
-                  <span>Secure Checkout – ${currentTotalPrice}</span>
-               </button>
-               <div className="flex justify-center space-x-6 text-[9px] text-charcoal/20 font-bold uppercase tracking-widest">
-                  <span className="flex items-center">🔒 Secure Checkout</span>
-                  <span className="flex items-center">💳 All cards accepted</span>
-               </div>
-               
-               <div className="text-center">
-                 <p className="text-[10px] font-black text-primary uppercase tracking-[0.2em]">
-                   Total Savings: ${totalSavingsToday}
-                 </p>
-               </div>
+              <button className="w-full bg-gradient-to-r from-primary via-[#0d7a6a] to-primary text-white h-[74px] rounded-2xl text-[15px] md:text-lg font-bold uppercase tracking-[0.15em] md:tracking-[0.2em] hover:brightness-110 transition-all transform hover:scale-[1.02] shadow-[0_20px_50px_-15px_rgba(12,102,88,0.5)] flex items-center justify-center space-x-4 px-6 border border-white/10 group">
+                <svg className="w-5 h-5 transition-transform group-hover:scale-110" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+                <span>Secure Checkout – ${currentTotalPrice}</span>
+              </button>
+              <div className="flex justify-center space-x-6 text-[9px] text-charcoal/20 font-bold uppercase tracking-widest">
+                <span className="flex items-center">🔒 Secure Checkout</span>
+                <span className="flex items-center">💳 All cards accepted</span>
+              </div>
+
+              <div className="text-center">
+                <p className="text-[10px] font-black text-primary uppercase tracking-[0.2em]">
+                  Total Savings: ${totalSavingsToday}
+                </p>
+              </div>
             </div>
           </div>
         </div>
