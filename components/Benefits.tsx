@@ -165,7 +165,7 @@ export const Benefits: React.FC<BenefitsProps> = ({ onNavigate: _onNavigate }) =
         </div>
 
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 md:mb-24 space-y-8 md:space-y-0">
-          <div className="max-w-xl">
+          <div className="max-w-4xl">
             <p className="text-charcoal/50 text-lg md:text-xl font-light leading-relaxed">
               A concentrated, fulvic-rich mineral complex formulated to support foundational physiological systems.
             </p>
@@ -196,10 +196,8 @@ export const Benefits: React.FC<BenefitsProps> = ({ onNavigate: _onNavigate }) =
         <div className="relative">
           <div ref={scrollRef} className="flex gap-4 md:gap-10 overflow-x-auto no-scrollbar snap-x snap-mandatory pb-12">
             {benefitData.map((benefit, idx) => {
-              // ✅ FIX: remove desktop nowrap + overflow clipping + forced height
               const titleClass =
-                "text-2xl md:text-[36px] font-serif leading-[1.1] tracking-tight font-bold uppercase " +
-                "whitespace-normal break-words";
+                "text-2xl md:text-[36px] font-serif leading-[1.1] tracking-tight font-bold uppercase";
 
               const descClass =
                 "leading-relaxed text-base md:text-lg font-light opacity-60 max-w-xl mt-4 md:mt-5 " +
@@ -308,3 +306,4 @@ export const Benefits: React.FC<BenefitsProps> = ({ onNavigate: _onNavigate }) =
     </section>
   );
 };
+
