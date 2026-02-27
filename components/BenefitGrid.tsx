@@ -66,11 +66,12 @@ const benefits = [
   {
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-8 h-8">
-        <path d="M12 21a9 9 0 100-18 9 9 0 000 18z" />
-        <path d="M8 12h8" />
+        <circle cx="10" cy="14" r="6" />
+        <path d="M14 10l7-7" />
+        <path d="M16 3h5v5" />
       </svg>
     ),
-    label: "Gut support"
+    label: "Male Vitality"
   }
 ];
 
