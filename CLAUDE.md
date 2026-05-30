@@ -246,3 +246,30 @@ Before real sales, the project may need:
 - Analytics and ad pixels
 
 Do not build fake checkout logic inside React unless explicitly requested. Prefer linking to or integrating with a real commerce system when ready.
+
+## Visual Development Workflow
+
+When making UI changes, Claude Code should not rely only on static code inspection.
+
+Preferred workflow:
+
+1. Run the local development server with `npm run dev`.
+2. Open the app at `http://localhost:3000`.
+3. Review both views:
+   - Home view
+   - Shop/product detail view
+4. Check at minimum:
+   - Mobile width around 390px
+   - Tablet width around 768px
+   - Desktop width around 1440px
+5. Before editing, identify the visual/UX issue being solved.
+6. After editing, reload the browser preview and verify the change visually.
+7. Confirm that:
+   - Layout is not broken
+   - Images load correctly
+   - `/NV_LABS/images/...` paths still work
+   - Mobile spacing still feels premium
+   - Navigation between home and shop still works
+8. Run `npm run build` before considering the task complete.
+
+Do not mark visual UI work complete based only on code changes.
