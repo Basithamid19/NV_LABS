@@ -97,3 +97,152 @@ The current `index.html` has only `<title>`, `lang="en"`, and a viewport tag. Wh
 
 - `vite.config.ts` injects `process.env.API_KEY` / `process.env.GEMINI_API_KEY` from `.env.local`, and the README mentions setting `GEMINI_API_KEY`. **No code currently uses these** — they are leftovers from the AI Studio template. Don't document them as required to run the site.
 - `metadata.json` (`name`, `description`, `requestFramePermissions`) is AI Studio metadata, not app config.
+
+## Neuroveda Labs Brand Rules
+
+Neuroveda Labs should feel premium, scientific, natural, and trustworthy. The brand should avoid looking like a generic supplement dropshipping store.
+
+Use language that is:
+- Calm
+- Premium
+- Evidence-aware
+- Wellness-oriented
+- Minimal
+- Confident but not exaggerated
+
+Avoid language that sounds:
+- Cheap
+- Aggressive
+- Overhyped
+- Bro-science
+- Medical or disease-focused
+
+The site should feel closer to a high-end wellness/longevity brand than a discount supplement store.
+
+## Supplement Compliance Rules
+
+Do not write copy that claims Shilajit cures, treats, prevents, or diagnoses any disease or medical condition.
+
+Avoid claims such as:
+- Cures anxiety
+- Treats depression
+- Fixes testosterone
+- Heals inflammation
+- Prevents disease
+- Reverses aging
+- Detoxes heavy metals
+- Guaranteed results
+
+Prefer softer structure/function language such as:
+- Supports energy
+- Supports focus
+- Supports daily vitality
+- Helps maintain overall wellness
+- Traditionally used in Ayurvedic wellness
+- Supports mineral intake
+
+When creating product copy, include disclaimers where appropriate:
+“These statements have not been evaluated by the FDA. This product is not intended to diagnose, treat, cure, or prevent any disease.”
+
+## E-Commerce Launch Rules
+
+The site is currently pre-launch. Do not imply that inventory is already warehoused in the US unless explicitly confirmed.
+
+If adding purchase, preorder, or checkout language, be transparent about availability and shipping timelines.
+
+Avoid fake urgency unless real:
+- Do not use “Only 3 left” unless inventory tracking exists.
+- Do not use fake countdown timers.
+- Do not imply thousands of customers or reviews unless real.
+
+Acceptable pre-launch language:
+- Join the early access list
+- Reserve your first batch
+- Pre-launch batch
+- Ships when first batch arrives
+- Be first to know when we launch
+
+## Product Image Rules
+
+Product images may be mockups until physical product photography is available.
+
+When using AI-generated or mockup product images:
+- Keep them realistic and consistent
+- Avoid misleading “real-life” claims
+- Use consistent bottle/jar shape, label placement, color, and lighting
+- Do not create fake certification badges unless certifications are confirmed
+- Do not show lab reports, seals, or official claims unless verified
+
+Local product images should still follow the `/NV_LABS/images/...` path rule.
+
+## Conversion Optimization Rules
+
+Prioritize trust before aggressive selling.
+
+Every major product section should answer one of these:
+- What is it?
+- Why should I trust it?
+- What makes it different?
+- How do I use it?
+- Is it tested?
+- When will I receive it?
+- What happens if I’m not satisfied?
+
+Good conversion elements:
+- Clear hero value proposition
+- Lab testing / purity explanation
+- Origin story
+- Ingredient transparency
+- Usage instructions
+- FAQ section
+- Founder or brand story
+- Email capture
+- Clear preorder/launch status
+
+Avoid cluttered sales tactics, excessive popups, flashing banners, or spammy discount language.
+
+## Content Tone Examples
+
+Better:
+“Organic Himalayan Shilajit resin designed to support daily energy, focus, and mineral replenishment.”
+
+Avoid:
+“Skyrocket testosterone, cure fatigue, and unlock superhuman performance.”
+
+Better:
+“Traditionally used in Ayurvedic wellness, our Shilajit is sourced with purity, traceability, and daily ritual in mind.”
+
+Avoid:
+“The ultimate ancient miracle supplement doctors don’t want you to know about.”
+
+## Development Priorities
+
+When improving the website, prioritize work in this order:
+
+1. Mobile experience
+2. Brand trust and premium feel
+3. Product clarity
+4. Conversion flow
+5. SEO and metadata
+6. Performance
+7. Animation polish
+
+Do not add complex features before the core product page, trust sections, and launch/preorder flow are clear.
+
+## Future E-Commerce Notes
+
+The current app is a marketing SPA, not a full e-commerce system.
+
+Before real sales, the project may need:
+- Shopify, Medusa, WooCommerce, Stripe Checkout, or another commerce backend
+- Real checkout flow
+- Inventory status
+- Shipping policy
+- Refund policy
+- Terms of service
+- Privacy policy
+- FDA disclaimer
+- Email capture integration
+- Analytics and ad pixels
+
+Do not build fake checkout logic inside React unless explicitly requested. Prefer linking to or integrating with a real commerce system when ready.
